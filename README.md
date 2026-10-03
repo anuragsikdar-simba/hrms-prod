@@ -1,4 +1,4 @@
-# August HRMS
+# Junnon HRMS
 
 Modern Human Resource Management System built with Next.js 14, React 18, Tailwind CSS, and Supabase.
 
@@ -35,6 +35,31 @@ Modern Human Resource Management System built with Next.js 14, React 18, Tailwin
    ```
 4. Open [http://localhost:3000](http://localhost:3000).
 
-## License
+## Deployment (Cloudflare Workers)
+
+Live at **https://junnon-hrms.august-projects.workers.dev**.
+
+Deployed via the [OpenNext Cloudflare adapter](https://opennext.js.org/cloudflare) (`@opennextjs/cloudflare@1.15.0`,
+pinned -- newer versions require Next.js 15+, this app is on 14.2.35). Config lives in `wrangler.jsonc` and
+`open-next.config.ts`.
+
+To redeploy after code changes, from a machine with `wrangler` authenticated (`npx wrangler login`, or
+`CLOUDFLARE_API_TOKEN` env var set):
+
+```bash
+npm install
+npm run cf:deploy
+```
+
+`NEXT_PUBLIC_*` env vars are baked in at build time from `.env.local` -- update `NEXT_PUBLIC_APP_URL` there to match
+the live URL before deploying. The server-side `SUPABASE_SERVICE_ROLE_KEY` is a Worker secret, set once via:
+
+```bash
+npx wrangler secret put SUPABASE_SERVICE_ROLE_KEY
+```
+
+Worker name is `junnon-hrms` (`wrangler.jsonc`). The `workers.dev` subdomain (`august-projects`) is an
+account-level setting, changeable once more via Cloudflare dashboard -> Workers & Pages -> "Your subdomain" ->
+Change -- doing so breaks the URL above and requires a redeploy.
 
 Private & Proprietary.
