@@ -1,0 +1,12 @@
+# Copy to .dev.vars for local `wrangler`/OpenNext preview runs.
+# These are Worker *runtime* secrets — separate from .env.local (used by `next dev`).
+# Set the same values as production secrets via:
+#   npx wrangler secret put NEXT_PUBLIC_SUPABASE_URL
+#   npx wrangler secret put NEXT_PUBLIC_SUPABASE_ANON_KEY
+#   npx wrangler secret put SUPABASE_SERVICE_ROLE_KEY
+
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+NEXT_PUBLIC_APP_URL=
+NEXT_PUBLIC_APP_NAME=Junnon HRMS

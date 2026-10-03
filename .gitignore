@@ -11,3 +11,9 @@ node_modules/
 
 # TypeScript incremental build cache (artifact)
 tsconfig.tsbuildinfo
+
+# Cloudflare / OpenNext build output + local secrets
+.open-next/
+.wrangler/
+.dev.vars
+cloudflare-env.d.ts
