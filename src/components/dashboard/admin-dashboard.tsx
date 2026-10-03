@@ -323,7 +323,7 @@ function AdminTodayCard() {
       <CardContent>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {/* Present */}
-          <PresenceList title="Present" dotColor="bg-green-500">
+          <PresenceList title="Present" dotColor="bg-green-700">
             {present.map((p, i) => (
               <div key={`${p.name}-${i}`} className="flex items-center gap-2.5">
                 <div className="h-7 w-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
@@ -336,7 +336,7 @@ function AdminTodayCard() {
           </PresenceList>
 
           {/* On leave */}
-          <PresenceList title="On leave" dotColor="bg-purple-500">
+          <PresenceList title="On leave" dotColor="bg-purple-700">
             {onLeave.map((p, i) => (
               <div key={`${p.name}-${i}`} className="flex items-center gap-2.5">
                 <div className="h-7 w-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
@@ -351,7 +351,7 @@ function AdminTodayCard() {
           </PresenceList>
 
           {/* Not yet punched in */}
-          <PresenceList title={statusNote ? statusNote : 'Not yet punched in'} dotColor="bg-red-500">
+          <PresenceList title={statusNote ? statusNote : 'Not yet punched in'} dotColor="bg-red-700">
             {statusNote ? (
               <p className="text-[11px] text-gray-400 italic">No absences to track</p>
             ) : notPunched.length === 0 ? (

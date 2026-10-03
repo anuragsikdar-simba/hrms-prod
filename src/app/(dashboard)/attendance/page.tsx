@@ -925,11 +925,11 @@ export default function AttendancePage() {
 
   // ---- Legend items ----
   const legendItems: { label: string; color: string; striped?: boolean }[] = [
-    { label: "Present", color: "bg-green-500" },
-    { label: "Leave", color: "bg-purple-500" },
-    { label: "Half", color: "bg-amber-500" },
-    { label: "Absent", color: "bg-red-500" },
-    { label: "Holiday", color: "bg-amber-400", striped: true },
+    { label: "Present", color: "bg-green-700" },
+    { label: "Leave", color: "bg-purple-700" },
+    { label: "Half", color: "bg-amber-700" },
+    { label: "Absent", color: "bg-red-700" },
+    { label: "Holiday", color: "bg-slate-400", striped: true },
   ];
 
   if (loading) {

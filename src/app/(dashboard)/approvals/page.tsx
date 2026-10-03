@@ -172,14 +172,14 @@ function StatsRow({
   avgResponse: string;
 }) {
   const stats = [
-    { label: "Pending", value: String(pending), dotColor: "bg-amber-500" },
+    { label: "Pending", value: String(pending), dotColor: "bg-amber-700" },
     {
       label: "Approved",
       value: String(approvedToday),
-      dotColor: "bg-green-500",
+      dotColor: "bg-green-700",
     },
-    { label: "Rejected", value: String(rejected), dotColor: "bg-red-500" },
-    { label: "Avg. response", value: avgResponse, dotColor: "bg-blue-500" },
+    { label: "Rejected", value: String(rejected), dotColor: "bg-red-700" },
+    { label: "Avg. response", value: avgResponse, dotColor: "bg-gray-400" },
   ];
 
   return (

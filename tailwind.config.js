@@ -85,8 +85,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-ibm-plex-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-ibm-plex-mono)', 'ui-monospace', '"SF Mono"', 'Menlo', 'monospace'],
+        sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', '"SF Mono"', 'Menlo', 'monospace'],
       },
       boxShadow: {
         card: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',

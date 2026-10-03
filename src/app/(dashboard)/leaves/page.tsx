@@ -86,15 +86,15 @@ const LEAVE_BALANCES: {
     label: "Casual",
     total: 12,
     used: 4,
-    barColor: "bg-purple-500",
-    dotColor: "bg-purple-500",
+    barColor: "bg-purple-700",
+    dotColor: "bg-purple-700",
   },
   {
     label: "Sick",
     total: 10,
     used: 3,
-    barColor: "bg-red-500",
-    dotColor: "bg-red-500",
+    barColor: "bg-red-700",
+    dotColor: "bg-red-700",
   },
   {
     label: "Earned",
@@ -107,8 +107,8 @@ const LEAVE_BALANCES: {
     label: "Optional",
     total: 4,
     used: 1,
-    barColor: "bg-amber-500",
-    dotColor: "bg-amber-500",
+    barColor: "bg-amber-700",
+    dotColor: "bg-amber-700",
   },
 ];
 
@@ -217,22 +217,22 @@ function StatsRow({ pendingCount, upcomingCount }: { pendingCount: number; upcom
     {
       label: "Total balance",
       value: `${TOTAL_BALANCE} days`,
-      dotColor: "bg-blue-500",
+      dotColor: "bg-gray-400",
     },
     {
       label: "Used this FY",
       value: `${TOTAL_USED} days`,
-      dotColor: "bg-purple-500",
+      dotColor: "bg-gray-400",
     },
     {
       label: "Pending approval",
       value: String(pendingCount),
-      dotColor: "bg-amber-500",
+      dotColor: "bg-amber-700",
     },
     {
       label: "Upcoming approved",
       value: String(upcomingCount),
-      dotColor: "bg-green-500",
+      dotColor: "bg-green-700",
     },
   ];
 
