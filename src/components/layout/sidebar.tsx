@@ -80,22 +80,6 @@ const employeeSections = (onboardingVisible: boolean, submitted?: boolean): NavS
 // Avatar gradient helper
 // -------------------------------------------------------
 
-const AVATAR_GRADIENTS = [
-  'from-violet-500 to-purple-600',
-  'from-sky-500 to-blue-600',
-  'from-emerald-500 to-teal-600',
-  'from-orange-400 to-rose-500',
-  'from-pink-500 to-fuchsia-600',
-];
-
-function avatarGradient(name: string): string {
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  return AVATAR_GRADIENTS[Math.abs(hash) % AVATAR_GRADIENTS.length];
-}
-
 // -------------------------------------------------------
 // Sidebar component
 // -------------------------------------------------------
@@ -153,7 +137,6 @@ export function Sidebar({ open, onClose }: SidebarProps) {
   const userName = userProfile?.name ?? 'Loading...';
   const userRole = isAdmin ? 'Admin' : (userProfile?.designation ?? 'Employee');
   const initials = userProfile ? getInitials(userProfile.name) : '??';
-  const gradient = avatarGradient(userName);
 
   return (
     <>
@@ -271,13 +254,8 @@ export function Sidebar({ open, onClose }: SidebarProps) {
         {/* Footer / user section */}
         <div className="border-t border-[var(--border)] px-3 py-3">
           <div className="flex items-center gap-2.5">
-            {/* Gradient avatar */}
-            <div
-              className={cn(
-                'flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br text-[10px] font-semibold text-white',
-                gradient,
-              )}
-            >
+            {/* Avatar */}
+            <div className="flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full bg-gray-900 text-[10px] font-semibold text-white">
               {initials}
             </div>
 
