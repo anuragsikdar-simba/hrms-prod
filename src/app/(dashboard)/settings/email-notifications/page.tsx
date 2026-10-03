@@ -261,7 +261,7 @@ export default function EmailNotificationsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Mail className="h-5 w-5 text-blue-600" />
+            <Mail className="h-5 w-5 text-gray-400" />
             SMTP Configuration
           </CardTitle>
         </CardHeader>
@@ -300,7 +300,7 @@ export default function EmailNotificationsPage() {
         <CardHeader>
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-2">
-              <Bell className="h-5 w-5 text-indigo-600" />
+              <Bell className="h-5 w-5 text-gray-400" />
               Notification Rules
             </CardTitle>
             <Button size="sm" disabled={busy} onClick={openAdd}>

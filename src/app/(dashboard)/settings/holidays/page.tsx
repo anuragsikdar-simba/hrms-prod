@@ -323,8 +323,8 @@ export default function HolidaysPage() {
                     <TableRow key={holiday.id}>
                       <TableCell>
                         <div className="flex items-center gap-3">
-                          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-50">
-                            <Calendar className="h-4 w-4 text-emerald-600" />
+                          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-100">
+                            <Calendar className="h-4 w-4 text-gray-500" />
                           </div>
                           <span className="font-mono text-xs text-gray-700">
                             {formatDate(holiday.date)}

@@ -377,7 +377,7 @@ export default function LeaveAllocationPage() {
       <Card>
         <CardHeader className="justify-between">
             <CardTitle className="flex items-center gap-2">
-              <CalendarDays className="h-5 w-5 text-blue-600" />
+              <CalendarDays className="h-5 w-5 text-gray-400" />
               Leave Types &amp; Default Allocations
             </CardTitle>
             <Button size="sm" disabled={busy} onClick={openAddLeaveType}>
@@ -493,7 +493,7 @@ export default function LeaveAllocationPage() {
       <Card>
         <CardHeader className="flex-wrap justify-between gap-3">
             <CardTitle className="flex items-center gap-2">
-              <UserCog className="h-5 w-5 text-violet-600" />
+              <UserCog className="h-5 w-5 text-gray-400" />
               Employee Overrides
             </CardTitle>
             <div className="flex items-center gap-3">

@@ -71,7 +71,7 @@ export function StatCard({
   value,
   trend,
   trendDirection = 'neutral',
-  color = 'blue',
+  color = 'gray',
   onClick,
   className,
 }: StatCardProps) {

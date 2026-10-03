@@ -562,7 +562,7 @@ export default function MyProfilePage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <User className="h-4 w-4 text-blue-600" />
+              <User className="h-4 w-4 text-gray-400" />
               Personal Information
             </CardTitle>
           </CardHeader>
@@ -583,7 +583,7 @@ export default function MyProfilePage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Briefcase className="h-4 w-4 text-blue-600" />
+              <Briefcase className="h-4 w-4 text-gray-400" />
               Employment Details
             </CardTitle>
           </CardHeader>
@@ -643,7 +643,7 @@ export default function MyProfilePage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Landmark className="h-4 w-4 text-blue-600" />
+              <Landmark className="h-4 w-4 text-gray-400" />
               Bank Details
             </CardTitle>
           </CardHeader>
@@ -664,7 +664,7 @@ export default function MyProfilePage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <FileText className="h-4 w-4 text-blue-600" />
+              <FileText className="h-4 w-4 text-gray-400" />
               Documents
             </CardTitle>
           </CardHeader>

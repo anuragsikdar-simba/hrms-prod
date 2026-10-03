@@ -488,7 +488,7 @@ export function ImportDialog({ open, onOpenChange, onImported }: ImportDialogPro
       <DialogContent className={wide ? "max-w-5xl" : "max-w-2xl"}>
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <Upload className="h-5 w-5 text-blue-600" />
+            <Upload className="h-5 w-5 text-gray-400" />
             Import Employees from CSV
           </DialogTitle>
           <DialogDescription>

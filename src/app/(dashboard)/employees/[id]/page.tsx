@@ -1211,27 +1211,27 @@ export default function EmployeeProfilePage() {
         <TabsContent value="overview">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <OverviewCard
-              icon={<Phone className="h-5 w-5 text-blue-600" />}
+              icon={<Phone className="h-5 w-5 text-gray-400" />}
               label="Phone"
               value={employee.phone}
             />
             <OverviewCard
-              icon={<Mail className="h-5 w-5 text-blue-600" />}
+              icon={<Mail className="h-5 w-5 text-gray-400" />}
               label="Work Email"
               value={employee.email}
             />
             <OverviewCard
-              icon={<Building2 className="h-5 w-5 text-blue-600" />}
+              icon={<Building2 className="h-5 w-5 text-gray-400" />}
               label="Department"
               value={employee.department}
             />
             <OverviewCard
-              icon={<Briefcase className="h-5 w-5 text-blue-600" />}
+              icon={<Briefcase className="h-5 w-5 text-gray-400" />}
               label="Designation"
               value={employee.designation}
             />
             <OverviewCard
-              icon={<CalendarDays className="h-5 w-5 text-blue-600" />}
+              icon={<CalendarDays className="h-5 w-5 text-gray-400" />}
               label="Date of Joining"
               value={employee.dateOfJoining}
             />
@@ -1886,7 +1886,7 @@ export default function EmployeeProfilePage() {
             <CardHeader className="px-6 py-4">
               <div className="flex w-full items-center justify-between">
                 <CardTitle className="flex items-center gap-2">
-                  <Clock className="h-5 w-5 text-blue-600" />
+                  <Clock className="h-5 w-5 text-gray-400" />
                   Recent Attendance
                 </CardTitle>
                 {isAdmin && (

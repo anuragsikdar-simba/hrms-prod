@@ -156,12 +156,12 @@ function getWorkingDatesInRange(start: string, end: string): string[] {
 }
 
 const DEPT_COLORS = [
-  'bg-blue-500', 'bg-purple-500', 'bg-emerald-500', 'bg-amber-500',
-  'bg-rose-500', 'bg-teal-500', 'bg-indigo-500', 'bg-orange-500',
+  'bg-gray-900', 'bg-gray-800', 'bg-gray-700', 'bg-gray-600',
+  'bg-gray-500', 'bg-gray-400', 'bg-gray-300', 'bg-gray-200',
 ];
 
 const LEAVE_COLORS = [
-  'bg-purple-500', 'bg-red-500', 'bg-blue-500', 'bg-amber-500', 'bg-green-500', 'bg-teal-500',
+  'bg-gray-900', 'bg-gray-700', 'bg-gray-600', 'bg-gray-500', 'bg-gray-400', 'bg-gray-300',
 ];
 
 const PERIOD_LABELS: Record<Period, string> = {
@@ -459,7 +459,7 @@ export default function TeamInsightsPage() {
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <BarChart3 className="h-5 w-5 text-blue-600" />
+            <BarChart3 className="h-5 w-5 text-gray-400" />
             <h1 className="text-[22px] font-semibold tracking-tight text-gray-900 m-0">
               Team Insights
             </h1>
@@ -504,17 +504,17 @@ export default function TeamInsightsPage() {
         <>
           {/* ---- KPI Row ---- */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-            <StatCard icon={Users} label="Total Headcount" value={kpis.totalHeadcount} trend={`${kpis.activeCount} active`} color="blue" />
-            <StatCard icon={UserPlus} label="New Joiners" value={kpis.newJoiners} trend={PERIOD_LABELS[period]} trendDirection={kpis.newJoiners > 0 ? 'up' : 'neutral'} color="green" />
-            <StatCard icon={UserMinus} label="Attrition Rate" value={`${kpis.attritionRate}%`} trend={`${kpis.offboardedCount} departed`} trendDirection={kpis.attritionRate > 5 ? 'down' : 'neutral'} color="red" />
-            <StatCard icon={UserCog} label="Pending Onboarding" value={kpis.pendingOnboarding} trend={kpis.pendingOnboarding > 0 ? 'Needs attention' : 'All clear'} trendDirection={kpis.pendingOnboarding > 0 ? 'down' : 'up'} color="yellow" />
+            <StatCard icon={Users} label="Total Headcount" value={kpis.totalHeadcount} trend={`${kpis.activeCount} active`} />
+            <StatCard icon={UserPlus} label="New Joiners" value={kpis.newJoiners} trend={PERIOD_LABELS[period]} trendDirection={kpis.newJoiners > 0 ? 'up' : 'neutral'} />
+            <StatCard icon={UserMinus} label="Attrition Rate" value={`${kpis.attritionRate}%`} trend={`${kpis.offboardedCount} departed`} trendDirection={kpis.attritionRate > 5 ? 'down' : 'neutral'} />
+            <StatCard icon={UserCog} label="Pending Onboarding" value={kpis.pendingOnboarding} trend={kpis.pendingOnboarding > 0 ? 'Needs attention' : 'All clear'} trendDirection={kpis.pendingOnboarding > 0 ? 'down' : 'up'} />
           </div>
 
           {/* ---- Headcount Trend ---- */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-4 w-4 text-emerald-500" />
+                <TrendingUp className="h-4 w-4 text-gray-400" />
                 Headcount Trend
               </CardTitle>
               <CardDescription>Employee count over the last 6 months</CardDescription>
@@ -530,7 +530,7 @@ export default function TeamInsightsPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-blue-500" />
+                  <Clock className="h-4 w-4 text-gray-400" />
                   Attendance Trend
                 </CardTitle>
                 <CardDescription>Daily attendance count in the period</CardDescription>
@@ -555,7 +555,7 @@ export default function TeamInsightsPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Building2 className="h-4 w-4 text-purple-500" />
+                  <Building2 className="h-4 w-4 text-gray-400" />
                   Department Distribution
                 </CardTitle>
                 <CardDescription>{kpis.activeCount} active employees</CardDescription>
@@ -580,7 +580,7 @@ export default function TeamInsightsPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Building2 className="h-4 w-4 text-indigo-500" />
+                <Building2 className="h-4 w-4 text-gray-400" />
                 Department-wise Attendance Breakdown
               </CardTitle>
               <CardDescription>Attendance metrics per department for {PERIOD_LABELS[period].toLowerCase()}</CardDescription>
@@ -635,7 +635,7 @@ export default function TeamInsightsPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <CalendarDays className="h-4 w-4 text-green-500" />
+                <CalendarDays className="h-4 w-4 text-gray-400" />
                 Leave Utilization
               </CardTitle>
               <CardDescription>Organization-wide leave usage for {PERIOD_LABELS[period].toLowerCase()}</CardDescription>
@@ -663,7 +663,7 @@ export default function TeamInsightsPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-blue-500" />
+                <Users className="h-4 w-4 text-gray-400" />
                 Employee Performance Overview
               </CardTitle>
               <CardDescription>Individual metrics for {PERIOD_LABELS[period].toLowerCase()} - sorted by avg hours</CardDescription>

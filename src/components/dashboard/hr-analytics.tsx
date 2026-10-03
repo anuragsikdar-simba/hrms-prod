@@ -129,25 +129,25 @@ function shortDay(dateStr: string): string {
 }
 
 const DEPT_COLORS = [
-  'bg-blue-500',
-  'bg-purple-500',
-  'bg-emerald-500',
-  'bg-amber-500',
-  'bg-rose-500',
-  'bg-teal-500',
-  'bg-indigo-500',
-  'bg-orange-500',
-  'bg-cyan-500',
-  'bg-pink-500',
+  'bg-gray-900',
+  'bg-gray-800',
+  'bg-gray-700',
+  'bg-gray-600',
+  'bg-gray-500',
+  'bg-gray-400',
+  'bg-gray-300',
+  'bg-gray-200',
+  'bg-gray-100',
+  'bg-gray-50',
 ];
 
 const LEAVE_COLORS = [
-  'bg-purple-500',
-  'bg-red-500',
-  'bg-blue-500',
-  'bg-amber-500',
-  'bg-green-500',
-  'bg-teal-500',
+  'bg-gray-900',
+  'bg-gray-700',
+  'bg-gray-600',
+  'bg-gray-500',
+  'bg-gray-400',
+  'bg-gray-300',
 ];
 
 /* ================================================================== */
@@ -613,7 +613,6 @@ export function HRAnalytics() {
           value={kpis.totalHeadcount}
           trend={`${kpis.activeCount} active`}
           trendDirection="neutral"
-          color="blue"
         />
         <StatCard
           icon={UserPlus}
@@ -621,7 +620,6 @@ export function HRAnalytics() {
           value={kpis.newJoinersThisMonth}
           trend="This month"
           trendDirection={kpis.newJoinersThisMonth > 0 ? 'up' : 'neutral'}
-          color="green"
         />
         <StatCard
           icon={UserMinus}
@@ -629,7 +627,6 @@ export function HRAnalytics() {
           value={`${kpis.attritionRate}%`}
           trend={`${kpis.offboardedCount} in last 30 days`}
           trendDirection={kpis.attritionRate > 5 ? 'down' : 'neutral'}
-          color="red"
         />
         <StatCard
           icon={UserCog}
@@ -637,7 +634,6 @@ export function HRAnalytics() {
           value={kpis.pendingOnboarding}
           trend={kpis.pendingOnboarding > 0 ? 'Needs attention' : 'All clear'}
           trendDirection={kpis.pendingOnboarding > 0 ? 'down' : 'up'}
-          color="yellow"
         />
       </div>
 
@@ -649,7 +645,7 @@ export function HRAnalytics() {
             <div className="flex items-center justify-between">
               <div>
                 <CardTitle className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-blue-500" />
+                  <Clock className="h-4 w-4 text-gray-400" />
                   Attendance Insights
                 </CardTitle>
                 <CardDescription className="mt-0.5">This month's attendance overview</CardDescription>
@@ -705,7 +701,7 @@ export function HRAnalytics() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Building2 className="h-4 w-4 text-purple-500" />
+              <Building2 className="h-4 w-4 text-gray-400" />
               Department Distribution
             </CardTitle>
             <CardDescription className="mt-0.5">{kpis.activeCount} active employees across departments</CardDescription>
@@ -742,7 +738,7 @@ export function HRAnalytics() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <CalendarDays className="h-4 w-4 text-green-500" />
+              <CalendarDays className="h-4 w-4 text-gray-400" />
               Leave Utilization
             </CardTitle>
             <CardDescription className="mt-0.5">Organization-wide leave usage</CardDescription>
@@ -796,7 +792,7 @@ export function HRAnalytics() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <TrendingUp className="h-4 w-4 text-emerald-500" />
+              <TrendingUp className="h-4 w-4 text-gray-400" />
               Work Hours Snapshot
             </CardTitle>
             <CardDescription className="mt-0.5">Average daily hours this month</CardDescription>
@@ -874,7 +870,7 @@ export function HRAnalytics() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <FileCheck2 className="h-4 w-4 text-teal-500" />
+            <FileCheck2 className="h-4 w-4 text-gray-400" />
             Document Compliance
           </CardTitle>
           <CardDescription className="mt-0.5">Employee document verification status</CardDescription>

@@ -212,8 +212,8 @@ export default function DepartmentsPage() {
                     <TableRow key={dept.id}>
                       <TableCell>
                         <div className="flex items-center gap-3">
-                          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50">
-                            <Building2 className="h-4 w-4 text-blue-600" />
+                          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-100">
+                            <Building2 className="h-4 w-4 text-gray-500" />
                           </div>
                           <span className="text-xs font-medium text-gray-900">{dept.name}</span>
                         </div>
