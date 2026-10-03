@@ -2177,7 +2177,7 @@ function OverviewCard({
   return (
     <Card>
       <CardContent className="flex items-center gap-3 p-4">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gray-100">
           {icon}
         </div>
         <div>

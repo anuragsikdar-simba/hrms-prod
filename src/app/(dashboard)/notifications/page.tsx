@@ -60,12 +60,12 @@ const iconMap: Record<NotificationType, LucideIcon> = {
 };
 
 const iconColorMap: Record<NotificationType, string> = {
-  general: 'text-blue-600 bg-blue-100',
-  leave: 'text-orange-600 bg-orange-100',
-  onboarding: 'text-emerald-600 bg-emerald-100',
-  attendance: 'text-violet-600 bg-violet-100',
+  general: 'text-gray-500 bg-gray-100',
+  leave: 'text-gray-500 bg-gray-100',
+  onboarding: 'text-gray-500 bg-gray-100',
+  attendance: 'text-gray-500 bg-gray-100',
   ip: 'text-red-600 bg-red-100',
-  profile: 'text-cyan-600 bg-cyan-100',
+  profile: 'text-gray-500 bg-gray-100',
 };
 
 /* ------------------------------------------------------------------ */

@@ -410,10 +410,10 @@ function AdminPendingActionsCard() {
 
         const items: PendingItem[] = [];
         if (absentCount > 0) items.push({ label: 'Employees absent without leave', count: absentCount, Icon: AlertTriangle, iconBg: 'bg-red-50', iconColor: 'text-red-600', href: '/dashboard' });
-        if ((leaveCount ?? 0) > 0) items.push({ label: 'Leave requests awaiting review', count: leaveCount ?? 0, Icon: Inbox, iconBg: 'bg-blue-50', iconColor: 'text-blue-600', href: '/approvals' });
-        if ((onboardingCount ?? 0) > 0) items.push({ label: 'Onboarding submissions to review', count: onboardingCount ?? 0, Icon: UserPen, iconBg: 'bg-purple-50', iconColor: 'text-purple-600', href: '/onboarding/submissions' });
+        if ((leaveCount ?? 0) > 0) items.push({ label: 'Leave requests awaiting review', count: leaveCount ?? 0, Icon: Inbox, iconBg: 'bg-gray-100', iconColor: 'text-gray-500', href: '/approvals' });
+        if ((onboardingCount ?? 0) > 0) items.push({ label: 'Onboarding submissions to review', count: onboardingCount ?? 0, Icon: UserPen, iconBg: 'bg-gray-100', iconColor: 'text-gray-500', href: '/onboarding/submissions' });
         if ((ipCount ?? 0) > 0) items.push({ label: 'Unknown IP punch-in requests', count: ipCount ?? 0, Icon: ShieldAlert, iconBg: 'bg-red-50', iconColor: 'text-red-600', href: '/settings/ip-allowlist' });
-        if ((regCount ?? 0) > 0) items.push({ label: 'Regularisation requests', count: regCount ?? 0, Icon: Clock, iconBg: 'bg-amber-50', iconColor: 'text-amber-600', href: '/approvals' });
+        if ((regCount ?? 0) > 0) items.push({ label: 'Regularisation requests', count: regCount ?? 0, Icon: Clock, iconBg: 'bg-gray-100', iconColor: 'text-gray-500', href: '/approvals' });
         setPendingItems(items);
       } catch (err) {
         console.error('[AdminPendingActionsCard] fetch error:', err);

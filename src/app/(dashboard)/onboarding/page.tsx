@@ -914,8 +914,8 @@ function EmployeeOnboardingForm() {
       <div className="mx-auto max-w-lg py-20">
         <Card>
           <CardContent className="flex flex-col items-center gap-4 py-12 text-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-              <Clock className="h-8 w-8 text-blue-600" />
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+              <Clock className="h-8 w-8 text-gray-500" />
             </div>
             <h2 className="text-xl font-semibold text-gray-900">
               Onboarding Submitted

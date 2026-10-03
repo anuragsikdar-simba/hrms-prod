@@ -25,56 +25,42 @@ const SETTING_CARDS = [
     description: "Manage company departments",
     icon: Building2,
     href: "/settings/departments",
-    color: "text-blue-600",
-    bgColor: "bg-blue-50",
   },
   {
     title: "Holiday Calendar",
     description: "Configure holidays per financial year",
     icon: Calendar,
     href: "/settings/holidays",
-    color: "text-emerald-600",
-    bgColor: "bg-emerald-50",
   },
   {
     title: "Leave Allocation",
     description: "Set annual leave allocations",
     icon: CalendarDays,
     href: "/settings/leave-allocation",
-    color: "text-purple-600",
-    bgColor: "bg-purple-50",
   },
   {
     title: "IP Allowlist",
     description: "Manage office IPs and access control",
     icon: Shield,
     href: "/settings/ip-allowlist",
-    color: "text-amber-600",
-    bgColor: "bg-amber-50",
   },
   {
     title: "Punch Locations",
     description: "Geofence where employees can punch in",
     icon: MapPin,
     href: "/settings/punch-locations",
-    color: "text-teal-600",
-    bgColor: "bg-teal-50",
   },
   {
     title: "Onboarding Form",
     description: "Customize onboarding form fields",
     icon: ClipboardList,
     href: "/settings/onboarding-form",
-    color: "text-pink-600",
-    bgColor: "bg-pink-50",
   },
   {
     title: "Email Notifications",
     description: "Configure notification preferences",
     icon: Mail,
     href: "/settings/email-notifications",
-    color: "text-indigo-600",
-    bgColor: "bg-indigo-50",
   },
 ] as const;
 
@@ -122,20 +108,18 @@ export default function SettingsPage() {
               <Card className="group cursor-pointer transition-all hover:border-gray-300 hover:shadow-md">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div
-                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg ${card.bgColor}`}
-                    >
-                      <Icon className={`h-6 w-6 ${card.color}`} />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gray-100">
+                      <Icon className="h-6 w-6 text-gray-500" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">
+                      <h3 className="font-semibold text-gray-900">
                         {card.title}
                       </h3>
                       <p className="mt-1 text-sm text-gray-500">
                         {card.description}
                       </p>
                     </div>
-                    <ArrowRight className="mt-1 h-5 w-5 shrink-0 text-gray-300 transition-transform group-hover:translate-x-1 group-hover:text-blue-500" />
+                    <ArrowRight className="mt-1 h-5 w-5 shrink-0 text-gray-300 transition-transform group-hover:translate-x-1 group-hover:text-gray-500" />
                   </div>
                 </CardContent>
               </Card>

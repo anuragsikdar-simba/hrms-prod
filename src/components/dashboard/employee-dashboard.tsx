@@ -46,12 +46,12 @@ type TeamLeave = { name: string; avatar: string; dateRange: string; leaveType: s
 type ActivityItem = { who: string; action: string; time: string; color: string };
 
 const LEAVE_COLORS: Record<number, { color: string; track: string }> = {
-  0: { color: 'bg-purple-500', track: 'bg-purple-100' },
-  1: { color: 'bg-red-500', track: 'bg-red-100' },
-  2: { color: 'bg-blue-500', track: 'bg-blue-100' },
-  3: { color: 'bg-amber-500', track: 'bg-amber-100' },
-  4: { color: 'bg-green-500', track: 'bg-green-100' },
-  5: { color: 'bg-teal-500', track: 'bg-teal-100' },
+  0: { color: 'bg-gray-900', track: 'bg-gray-200' },
+  1: { color: 'bg-gray-700', track: 'bg-gray-200' },
+  2: { color: 'bg-gray-600', track: 'bg-gray-200' },
+  3: { color: 'bg-gray-500', track: 'bg-gray-200' },
+  4: { color: 'bg-gray-400', track: 'bg-gray-200' },
+  5: { color: 'bg-gray-300', track: 'bg-gray-200' },
 };
 
 /* ================================================================== */
@@ -500,12 +500,12 @@ function PendingActionsCard({ employeeId }: { employeeId?: string }) {
 
         const pending: PendingAction[] = [];
         if ((stats.pendingLeaves ?? 0) > 0) {
-          pending.push({ label: 'Pending leave requests', count: stats.pendingLeaves ?? 0, iconBg: 'bg-amber-50', iconColor: 'text-amber-600', Icon: FileUp, href: '/leaves' });
+          pending.push({ label: 'Pending leave requests', count: stats.pendingLeaves ?? 0, iconBg: 'bg-gray-100', iconColor: 'text-gray-500', Icon: FileUp, href: '/leaves' });
         }
         if (stats.onboardingStatus === 'pending') {
-          pending.push({ label: 'Complete onboarding', count: null, iconBg: 'bg-blue-50', iconColor: 'text-blue-600', Icon: UserPen, href: '/onboarding' });
+          pending.push({ label: 'Complete onboarding', count: null, iconBg: 'bg-gray-100', iconColor: 'text-gray-500', Icon: UserPen, href: '/onboarding' });
         } else if (stats.onboardingStatus === 'in_progress') {
-          pending.push({ label: 'Onboarding submitted — awaiting review', count: null, iconBg: 'bg-green-50', iconColor: 'text-green-600', Icon: UserPen, href: '/onboarding' });
+          pending.push({ label: 'Onboarding submitted — awaiting review', count: null, iconBg: 'bg-gray-100', iconColor: 'text-gray-500', Icon: UserPen, href: '/onboarding' });
         }
         setItems(pending);
       } catch (err) {
