@@ -187,15 +187,15 @@ export function Sidebar({ open, onClose }: SidebarProps) {
               aria-hidden="true"
             >
               <span className="font-mono text-[12px] font-bold leading-none text-white">
-                AU
+                JU
               </span>
             </div>
             <div className="min-w-0">
               <span className="block text-[14px] font-semibold leading-tight text-gray-900">
-                HRMS
+                Junnon
               </span>
               <span className="block text-[10px] font-medium uppercase leading-tight tracking-[0.06em] text-[var(--text-tertiary)]">
-                by August
+                HRMS
               </span>
             </div>
           </Link>

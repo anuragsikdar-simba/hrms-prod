@@ -287,11 +287,6 @@ export function SelfieModal({
     onCapture(photo, workMode, geoResult.coords);
   };
 
-  const handleSkip = () => {
-    stopStream();
-    onCapture(null, workMode, geoResult.coords);
-  };
-
   const actionLabel = actionType === 'punch_in' ? 'Punch In' : 'Punch Out';
 
   return (
@@ -452,15 +447,6 @@ export function SelfieModal({
                     <Camera className="h-4 w-4" />
                     Take Selfie
                   </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={handleSkip}
-                    disabled={loading}
-                    className="text-xs text-gray-500"
-                  >
-                    Skip
-                  </Button>
                 </>
               ) : (
                 <>
@@ -471,14 +457,6 @@ export function SelfieModal({
                   >
                     <Camera className="h-4 w-4" />
                     Take Photo
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={handleSkip}
-                    className="text-xs text-gray-500"
-                  >
-                    Skip
                   </Button>
                 </>
               )}

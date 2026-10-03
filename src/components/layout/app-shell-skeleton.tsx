@@ -17,7 +17,7 @@ export function AppShellSkeleton() {
     <div
       className="grid h-screen bg-[var(--bg)] grid-cols-1 grid-rows-[var(--topbar-h)_1fr] lg:grid-cols-[var(--sidebar-w)_1fr]"
       aria-busy="true"
-      aria-label="Loading August HRMS"
+      aria-label="Loading Junnon HRMS"
     >
       {/* Sidebar */}
       <aside

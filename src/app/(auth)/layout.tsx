@@ -42,13 +42,13 @@ export default function AuthRouteLayout({
         <div>
           {/* Brand mark */}
           <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/10 text-[15px] font-bold tracking-tight backdrop-blur-sm">
-            AU
+            JU
           </div>
         </div>
 
         <div className="space-y-4">
           <h1 className="text-[28px] font-semibold leading-tight tracking-tight text-white">
-            August
+            Junnon
             <br />
             <span className="text-white/60">HRMS</span>
           </h1>
@@ -59,7 +59,7 @@ export default function AuthRouteLayout({
         </div>
 
         <p className="text-[11px] text-white/25">
-          &copy; {new Date().getFullYear()} August. All rights reserved.
+          &copy; {new Date().getFullYear()} Junnon. All rights reserved.
         </p>
       </div>
 
@@ -68,9 +68,9 @@ export default function AuthRouteLayout({
         {/* Mobile-only brand mark */}
         <div className="mb-8 flex flex-col items-center lg:hidden">
           <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900 text-sm font-bold text-white">
-            AU
+            JU
           </div>
-          <p className="text-xs text-gray-400">August HRMS</p>
+          <p className="text-xs text-gray-400">Junnon HRMS</p>
         </div>
 
         <div className="w-full max-w-[380px]">{children}</div>

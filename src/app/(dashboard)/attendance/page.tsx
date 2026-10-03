@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/components/ui/toast";
 import { useAuth } from "@/contexts/AuthContext";
 import api from "@/lib/api-client";
+import { canFileRegularisation, REGULARISATION_HOURS_THRESHOLD } from "@/lib/attendance";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -750,6 +751,19 @@ export default function AttendancePage() {
   // Use selected day or default to today
   const activeRecord = selectedDay || todayRecord || null;
 
+  // A day is eligible for regularisation only when it's absent, an
+  // unfinished session, or logged fewer than REGULARISATION_HOURS_THRESHOLD
+  // hours. A day that already meets the minimum needs no correction.
+  const regEligible = useMemo(() => {
+    if (!activeRecord) return false;
+    if (activeRecord.isActiveSession) return false;
+    if (activeRecord.status === "absent") return true;
+    if (activeRecord.status === "present" || activeRecord.status === "half") {
+      return activeRecord.totalHours == null || activeRecord.totalHours < REGULARISATION_HOURS_THRESHOLD;
+    }
+    return false;
+  }, [activeRecord]);
+
   // ---- Summary ----
   const summary = useMemo(() => {
     let present = 0;
@@ -860,6 +874,10 @@ export default function AttendancePage() {
   const [regSubmitting, setRegSubmitting] = useState(false);
 
   async function handleRegSubmit() {
+    if (!regEligible) {
+      setRegError(`This day already logged at least ${REGULARISATION_HOURS_THRESHOLD}h — no regularisation needed.`);
+      return;
+    }
     if (!regForm.reason.trim()) {
       setRegError("Reason is required");
       return;
@@ -971,7 +989,12 @@ export default function AttendancePage() {
             </button>
           </div>
 
-          <Button size="default" onClick={openRegDialog}>
+          <Button
+            size="default"
+            onClick={openRegDialog}
+            disabled={!regEligible}
+            title={regEligible ? undefined : `This day already logged at least ${REGULARISATION_HOURS_THRESHOLD}h — no regularisation needed.`}
+          >
             Regularise
           </Button>
         </div>

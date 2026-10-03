@@ -9,7 +9,7 @@ export default function DashboardLoading() {
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Left 2 cols */}
         <div className="space-y-6 lg:col-span-2">
-          {/* Today across August banner */}
+          {/* Today across Junnon banner */}
           <div className="rounded-xl border border-[var(--border)] bg-white p-5">
             <div className="flex items-center justify-between">
               <Skeleton className="h-5 w-44" />

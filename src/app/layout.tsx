@@ -18,8 +18,8 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'August HRMS',
-  description: 'August Human Resource Management System',
+  title: 'Junnon HRMS',
+  description: 'Junnon Human Resource Management System',
   icons: {
     icon: '/favicon.ico',
   },

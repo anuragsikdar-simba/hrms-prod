@@ -49,7 +49,7 @@ export interface PayslipPdfInput {
 // Page constants
 // ---------------------------------------------------------------------------
 
-const ORG_NAME = 'August HRMS';
+const ORG_NAME = 'Junnon HRMS';
 const FOOTER_TEXT = 'Computer-generated payslip. No signature required.';
 
 /** A4 in PDF points. */

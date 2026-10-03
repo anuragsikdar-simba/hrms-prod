@@ -303,7 +303,7 @@ function AdminTodayCard() {
       <CardHeader>
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <div>
-            <CardTitle>Today across August</CardTitle>
+            <CardTitle>Today across Junnon</CardTitle>
             <CardDescription className="mt-0.5">{formatAdminDate()}</CardDescription>
           </div>
           {!fetchError && (

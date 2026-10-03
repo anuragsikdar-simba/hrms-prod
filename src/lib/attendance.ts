@@ -27,6 +27,35 @@ export const SHIFT_GRACE_HOURS = 5.5;
  */
 export const MAX_BREAK_HOURS = 2;
 
+/**
+ * Minimum worked hours a day must reach before it is considered a complete
+ * login — below this, the employee may file a regularisation request for
+ * that day. A 15-minute buffer is granted on top of the minimum so a day at
+ * or above `REGULARISATION_HOURS_THRESHOLD` (7h45m) does not need correction.
+ */
+export const REGULARISATION_MIN_HOURS = 8;
+export const REGULARISATION_BUFFER_HOURS = 0.25; // 15 minutes
+export const REGULARISATION_HOURS_THRESHOLD =
+  REGULARISATION_MIN_HOURS - REGULARISATION_BUFFER_HOURS; // 7.75h
+
+/**
+ * Whether a day is eligible for a regularisation request: no attendance row
+ * (absent), an unfinished session (punched in, not yet out), or worked hours
+ * below the threshold. A day already at/above the threshold needs no
+ * correction and must not accept a new regularisation request.
+ */
+export function canFileRegularisation(record: {
+  punch_in?: string | null;
+  punch_out?: string | null;
+  worked_hours?: number | string | null;
+} | null): boolean {
+  if (!record) return true; // absent: no row at all
+  if (record.punch_in && !record.punch_out) return false; // session still open
+  const hours = record.worked_hours == null ? null : Number(record.worked_hours);
+  if (hours == null || !Number.isFinite(hours)) return true; // no computed hours yet
+  return hours < REGULARISATION_HOURS_THRESHOLD;
+}
+
 /** Parse a "HH:MM" or "HH:MM:SS" time string into minutes since midnight. */
 function timeToMinutes(t: string): number | null {
   const m = /^(\d{1,2}):(\d{2})/.exec(t);

@@ -3,6 +3,7 @@ import { verifyAuth, requireAdmin } from '@/lib/auth-helpers';
 import { logAudit, getClientIp } from '@/lib/audit';
 import { rateLimiters } from '@/lib/rate-limit';
 import { errorResponse } from '@/lib/api-errors';
+import { canFileRegularisation, REGULARISATION_HOURS_THRESHOLD } from '@/lib/attendance';
 
 /* ------------------------------------------------------------------ */
 /*  GET /api/approval-requests                                         */
@@ -56,6 +57,37 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, error: `type must be one of: ${validTypes.join(', ')}` }, { status: 400 });
     }
 
+    if (body.type === 'regularisation') {
+      if (!body.reg_date) {
+        return NextResponse.json(
+          { success: false, error: 'reg_date is required for a regularisation request.' },
+          { status: 400 },
+        );
+      }
+      const { data: attRow, error: attErr } = await db
+        .from('attendance')
+        .select('punch_in, punch_out, worked_hours')
+        .eq('employee_id', user.uid)
+        .eq('date', body.reg_date)
+        .maybeSingle();
+      if (attErr) throw attErr;
+
+      if (!canFileRegularisation(attRow)) {
+        if (attRow?.punch_in && !attRow?.punch_out) {
+          return NextResponse.json(
+            { success: false, error: "This day's session is still active; wait until you punch out before requesting regularisation." },
+            { status: 400 },
+          );
+        }
+        return NextResponse.json(
+          {
+            success: false,
+            error: `You logged ${Number(attRow?.worked_hours).toFixed(1)}h on this day — at least ${REGULARISATION_HOURS_THRESHOLD}h is required, so no regularisation is needed.`,
+          },
+          { status: 400 },
+        );
+      }
+    }
     // For profile_change requests, encode field_name + new_value into requested_change.
     // For shift_change requests, encode the current and requested shift times so the
     // approver sees exactly what will change and approval can apply it verbatim.

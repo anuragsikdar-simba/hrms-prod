@@ -276,7 +276,7 @@ export default function EmailNotificationsPage() {
               <Input label="SMTP Port" placeholder="587" value={smtp.smtp_port} onChange={(e) => handleSmtpChange("smtp_port", e.target.value)} />
               <Input label="Username" placeholder="noreply@example.com" value={smtp.smtp_username} onChange={(e) => handleSmtpChange("smtp_username", e.target.value)} />
               <Input label="Password" type="password" placeholder="********" value={smtp.smtp_password} onChange={(e) => handleSmtpChange("smtp_password", e.target.value)} />
-              <Input label="From Name" placeholder="August HRMS" value={smtp.from_name} onChange={(e) => handleSmtpChange("from_name", e.target.value)} />
+              <Input label="From Name" placeholder="Junnon HRMS" value={smtp.from_name} onChange={(e) => handleSmtpChange("from_name", e.target.value)} />
               <Input label="From Email" placeholder="noreply@example.com" value={smtp.from_email} onChange={(e) => handleSmtpChange("from_email", e.target.value)} />
             </div>
           )}
