@@ -1008,19 +1008,19 @@ export default function AttendancePage() {
           label="Days present"
           value={`${summary.present} / ${summary.workDaysPast}`}
           delta="This month"
-          dotColor="bg-green-500"
+          dotColor="bg-gray-400"
         />
         <StatCard
           label="Avg. punch-in"
           value={summary.avgPunchIn}
           delta="This month"
-          dotColor="bg-blue-500"
+          dotColor="bg-gray-400"
         />
         <StatCard
           label="Hours logged"
           value={`${summary.totalHours} h`}
           delta={`${summary.avgHoursPerDay}h average / day`}
-          dotColor="bg-slate-500"
+          dotColor="bg-gray-400"
         />
         <StatCard
           label="Regularisations"
@@ -1032,7 +1032,7 @@ export default function AttendancePage() {
                 : "None pending"
               : "Unavailable"
           }
-          dotColor="bg-amber-500"
+          dotColor="bg-gray-400"
         />
       </div>
 
