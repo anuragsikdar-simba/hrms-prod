@@ -726,7 +726,9 @@ export function AdminDashboard() {
             />
           )}
           <AdminTodayCard />
-          <LeaveBalanceCard employeeId={employeeId} />
+          {userProfile?.tracksAttendance !== false && (
+            <LeaveBalanceCard employeeId={employeeId} />
+          )}
         </div>
 
         {/* ---- Right Column ---- */}
